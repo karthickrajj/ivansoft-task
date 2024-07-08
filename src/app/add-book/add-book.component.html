@@ -1,0 +1,122 @@
+<div>
+    <div class="add-header">
+      <h1>Add Book</h1>
+    </div>
+    <div class="content">
+      <div class="addbook-container">
+        <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
+          <div class="form-group row">
+            <label for="isbn" class="col-sm-3 col-form-label form-label"
+              [ngClass]="{'required-label': isbnModel.errors?.['required'] && isbnModel.touched}">ISBN NUMBER</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="isbn" name="isbn" [(ngModel)]="isbn" #isbnModel="ngModel"
+                appNumeric (invalidCharacter)="onInvalidCharacter('isbn')" minlength="5" maxlength="50" required>
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidCharacterError['isbn']" class="invalid-feedback">Alphabet characters are not
+                allowed.</span>
+  
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label form-label"
+              [ngClass]="{'required-label': name.errors?.['required'] && name.touched}">Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" appAlpha id="isbnname" name="isbnname" [(ngModel)]="isbnname"
+                (invalidCharacter)="onInvalidalphaCharacter('isbnname')" #name="ngModel" minlength="5" maxlength="50"
+                required>
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidalphaCharacterError['isbnname']" class="invalid-feedback">Numeric characters are not
+                allowed.</span>
+  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="author" class="col-sm-3 col-form-label form-label">Author</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="author" appAlpha name="author"
+                (invalidCharacter)="onInvalidalphaCharacter('author')" [(ngModel)]="author" maxlength="50">
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidalphaCharacterError['author']" class="invalid-feedback">Numeric characters are not
+                allowed.</span>
+  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="publication" class="col-sm-3 col-form-label form-label"
+              [ngClass]="{'required-label': bookpublication.errors?.['required'] && bookpublication.touched}">Publication</label>
+            <div class="col-sm-9">
+              <input type="text" appAlpha class="form-control" id="publication" name="publication"
+                [(ngModel)]="publication" (invalidCharacter)="onInvalidalphaCharacter('publication')"
+                #bookpublication="ngModel" minlength="5" maxlength="50" required>
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidalphaCharacterError['publication']" class="invalid-feedback">Numeric characters are
+                not
+                allowed.</span>
+  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="details" class="col-sm-3 col-form-label form-label"
+              [ngClass]="{'required-label': detailsmodel.errors?.['required'] && detailsmodel.touched}">Details</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="details" name="details" [(ngModel)]="details" minlength="5"
+                appAlpha (invalidCharacter)="onInvalidalphaCharacter('details')" maxlength="50" #detailsmodel="ngModel">
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidalphaCharacterError['details']" class="invalid-feedback">Numeric characters are not
+                allowed.</span>
+  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="qty" class="col-sm-3 col-form-label form-label"
+              [ngClass]="{'required-label': bookqty.errors?.['required'] && bookqty.touched}">Qty.</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="qty" (invalidCharacter)="onInvalidCharacter('qty')" name="qty"
+                [(ngModel)]="qty" appNumeric minlength="1" maxlength="5" #bookqty="ngModel" required>
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidCharacterError['qty']" class="invalid-feedback">Alphabet characters are not
+                allowed.</span>
+  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="price" class="col-sm-3 col-form-label form-label">Price</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="price" name="price" [(ngModel)]="price" minlength="1"
+                maxlength="2" appNumeric (invalidCharacter)="onInvalidCharacter('price')">
+            </div>
+            <div class="mar-auto">
+              <span *ngIf="showInvalidCharacterError['price']" class="invalid-feedback">Alphabet characters are not
+                allowed.</span>
+  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="branch" class="col-sm-3 col-form-label form-label"
+              [ngClass]="{'required-label': branch.errors?.['required'] && branch.touched}">Branch</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="selectMenu" [(ngModel)]="selectedOption" name="selectMenu"
+                #branch="ngModel" required>
+                <option value="option1">IT </option>
+                <option value="option2">Civil </option>
+                <option value="option3">Mechanical </option>
+  
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-9 offset-sm-3">
+              <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

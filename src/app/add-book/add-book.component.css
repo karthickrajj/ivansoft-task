@@ -1,0 +1,64 @@
+.cont-body{
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    justify-items: center !important;
+    /* margin: auto; */
+    height: 100vh;
+    width: 100vw !important;
+    max-width: none !important;
+    background: linear-gradient(184deg, #e0e7f1, #2f5597);
+}
+.add-header{
+    text-align: center;
+    background: #2f5597;
+    padding: 4px;
+    color: #ffffff;
+}
+.content{
+    width: 100%;
+}
+.mar-auto{
+  margin: auto !important;
+}
+.invalid-feedback{
+  color: red;
+  text-align: unset !important;
+  display: contents;
+  text-align-last: auto !important;
+  display: ruby-text;
+}
+  .addbook-container {
+    width: 35%;
+    margin: auto;
+    text-align-last: justify;
+    height: 80vh;
+    margin-top: 5rem;
+
+  }
+  .login-header {
+    text-align: center;
+    font-size: 2em;
+    color: #2f5597;
+    margin-bottom: 20px;
+  }
+  .required-label {
+    color: red !important;
+    text-align: right;
+  }
+  .form-label{
+    color: #000000;
+    text-align: right;
+  }
+  .submit-btn {
+    background-color: #4472c4;
+    border: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    text-align-last: center;
+  }
+  .login-button:hover {
+    background-color: #4472c4;
+  }
+  

@@ -1,0 +1,36 @@
+.card-header {
+    background-color: #2f5597 !important;
+    color: white;
+    border-radius: 0 !important;
+  
+  }
+  
+  .table {
+    margin-bottom: 0;
+    table-layout: fixed;
+  }
+  
+  .table thead th {
+    background-color: #fff;
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #C3FF93;
+    opacity: 0.5;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid green;
+    text-align: center;
+  }
+  
+  .container.mt-5 {
+    max-width: none;
+    padding: 0%;
+    margin-top: 0 !important;
+  }
+  
+  .card {
+    border: none !important;
+  }
